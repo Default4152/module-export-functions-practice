@@ -1,13 +1,20 @@
-var bar = "Hello!!";
-var x = bar;
+function palindromeChainLength(a) {
+  var b = 0;
+  while (a != reverse(a)) {
+    a += reverse(a);
+    b++;
+  }
+  return b;
+}
 
-function displayElements(arr) {
-  arr.forEach(function(el) {
-    console.log(el);
-  });
+function reverse(a) {
+  numTwo = a;
+  a = String(a);
+  a = a.split("").reverse().join("");
+  return parseInt(a);
 }
 
 module.exports = {
-  bar: bar,
-  displayElements: displayElements 
+  palindromeChainLength: palindromeChainLength,
+  reverse: reverse
 };
